@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <html lang="en">
 <head>
-  <title>paper-tooltip demo</title>
+  <title>kwc paper-tooltip demo</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
@@ -21,7 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="../../iron-icons/iron-icons.html">
   <link rel="import" href="../../paper-icon-button/paper-icon-button.html">
   <link rel="import" href="../../paper-styles/color.html">
-  <link rel="import" href="../paper-tooltip.html">
+  <link rel="import" href="../kwc-paper-tooltip.html">
   <link rel="import" href="test-button.html">
 
   <custom-style>
@@ -65,10 +65,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="id_4" class="avatar orange" tabindex="0"></div>
 
         <!-- paper-icon-buttons have an inherent padding that will push the tooltip down. offset undoes it -->
-        <paper-tooltip for="id_1" offset="0">&lt;3 &lt;3 &lt;3 </paper-tooltip>
-        <paper-tooltip for="id_2" offset="0">wake up!</paper-tooltip>
-        <paper-tooltip for="id_3" offset="0">help I am trapped in a tooltip</paper-tooltip>
-        <paper-tooltip for="id_4" offset="0">meow!</paper-tooltip>
+        <kwc-paper-tooltip for="id_1" offset="0">&lt;3 &lt;3 &lt;3 </kwc-paper-tooltip>
+        <kwc-paper-tooltip for="id_2" offset="0">wake up!</kwc-paper-tooltip>
+        <kwc-paper-tooltip for="id_3" offset="0">help I am trapped in a tooltip</kwc-paper-tooltip>
+        <kwc-paper-tooltip for="id_4" offset="0">meow!</kwc-paper-tooltip>
       </template>
     </demo-snippet>
 
@@ -78,15 +78,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <!-- Adding a tabindex so that we can show the tooltip when the whole box is tabbed to -->
         <div tabindex="0">
           <input type="checkbox">allosaurus
-          <paper-tooltip>the name means "different lizard"</paper-tooltip>
+          <kwc-paper-tooltip>the name means "different lizard"</kwc-paper-tooltip>
         </div>
         <div tabindex="0">
           <input type="checkbox">brontosaurus
-          <paper-tooltip>the name means "thunder lizard"</paper-tooltip>
+          <kwc-paper-tooltip>the name means "thunder lizard"</kwc-paper-tooltip>
         </div>
         <div tabindex="0">
           <input type="checkbox">megalosaurus
-          <paper-tooltip>the name means "roof lizard"</paper-tooltip>
+          <kwc-paper-tooltip>the name means "roof lizard"</kwc-paper-tooltip>
         </div>
       </div>
       </template>
@@ -100,10 +100,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="dir_3" class="avatar green" tabindex="0"></div>
         <div id="dir_4" class="avatar orange" tabindex="0"></div>
 
-        <paper-tooltip for="dir_1" position="left" animation-delay="0">👈</paper-tooltip>
-        <paper-tooltip for="dir_2" position="right" animation-delay="0">👉</paper-tooltip>
-        <paper-tooltip for="dir_3" position="top" animation-delay="0">👍</paper-tooltip>
-        <paper-tooltip for="dir_4" position="bottom" animation-delay="0">👎</paper-tooltip>
+        <kwc-paper-tooltip for="dir_1" position="left" animation-delay="0">👈</kwc-paper-tooltip>
+        <kwc-paper-tooltip for="dir_2" position="right" animation-delay="0">👉</kwc-paper-tooltip>
+        <kwc-paper-tooltip for="dir_3" position="top" animation-delay="0">👍</kwc-paper-tooltip>
+        <kwc-paper-tooltip for="dir_4" position="bottom" animation-delay="0">👎</kwc-paper-tooltip>
       </template>
     </demo-snippet>
 
@@ -112,7 +112,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <template>
         <custom-style>
           <style is="custom-style">
-            paper-tooltip.custom img {
+            kwc-paper-tooltip.custom img {
               width: 80px;
               padding-right: 10px;
               float: left;
@@ -125,10 +125,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </style>
         </custom-style>
         <paper-icon-button id="demo4_icon1" icon="favorite" alt="heart"></paper-icon-button>
-        <paper-tooltip for="demo4_icon1" class="custom" animation-delay="0">
+        <kwc-paper-tooltip for="demo4_icon1" class="custom" animation-delay="0">
           <img src="./donuts.png">
           Rich-text tooltips are doable but against the Material Design spec.
-        </paper-tooltip>
+        </kwc-paper-tooltip>
       </template>
     </demo-snippet>
 
@@ -136,9 +136,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <demo-snippet class="centered-demo">
       <template>
         <paper-icon-button id="demo5_icon1" icon="all-out" alt="clock" on-click="onClick"></paper-icon-button>
-        <paper-tooltip id="demo5_tooltip" for="demo5_icon1" animation-delay="500" animation-entry="scale-up-animation" animation-exit="scale-down-animation">
+        <kwc-paper-tooltip id="demo5_tooltip" for="demo5_icon1" animation-delay="500" animation-entry="scale-up-animation" animation-exit="scale-down-animation">
           This grows rather than fades in
-        </paper-tooltip>
+        </kwc-paper-tooltip>
       </template>
     </demo-snippet>
     
@@ -161,9 +161,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <button id="demo6_btn_starthide">Start Animation Hide</button>
         <button id="demo6_btn_cancel">Animation Cancel</button>
         <paper-icon-button id="demo6_icon1" icon="schedule" alt="clock" on-click="onClick"></paper-icon-button>
-        <paper-tooltip id="demo6_tooltip" for="demo6_icon1" class="slowmo" animation-delay="500">
+        <kwc-paper-tooltip id="demo6_tooltip" for="demo6_icon1" class="slowmo" animation-delay="500">
           Slow Motion Load - Click to complete straight away
-        </paper-tooltip>
+        </kwc-paper-tooltip>
         <script>
           demo6_btn_startshow.addEventListener('click',function() {
             demo6_tooltip.playAnimation("entry");
