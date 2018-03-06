@@ -11,7 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>paper-tooltip tests</title>
+  <title>kwc paper-tooltip tests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script src="../../iron-test-helpers/mock-interactions.js"></script>
 
   <link rel="import" href="../../test-fixture/test-fixture.html">
-  <link rel="import" href="../paper-tooltip.html">
+  <link rel="import" href="../kwc-paper-tooltip.html">
   <link rel="import" href="test-button.html">
   <link rel="import" href="test-icon.html">
 
@@ -35,7 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     height: 20px;
     background-color: red;
   }
-  paper-tooltip {
+  kwc-paper-tooltip {
     width: 70px;
     height: 30px;
     /*
@@ -64,7 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
       <div>
         <div id="target"></div>
-        <paper-tooltip for="target" animation-delay="0">Tooltip text</paper-tooltip>
+        <kwc-paper-tooltip for="target" animation-delay="0">Tooltip text</kwc-paper-tooltip>
       </div>
     </template>
   </test-fixture>
@@ -73,7 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
       <div>
         <div id="target" style="position:absolute"></div>
-        <paper-tooltip for="target" class="wide" fit-to-visible-bounds>Tooltip text</paper-tooltip>
+        <kwc-paper-tooltip for="target" class="wide" fit-to-visible-bounds>Tooltip text</kwc-paper-tooltip>
       </div>
     </template>
   </test-fixture>
@@ -82,7 +82,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
       <div>
         <div id="target"></div>
-        <paper-tooltip for="target"></paper-tooltip>
+        <kwc-paper-tooltip for="target"></kwc-paper-tooltip>
       </div>
     </template>
   </test-fixture>
@@ -91,7 +91,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
       <div>
         <div id="target"></div>
-        <paper-tooltip>Tooltip text</paper-tooltip>
+        <kwc-paper-tooltip>Tooltip text</kwc-paper-tooltip>
       </div>
     </template>
   </test-fixture>
@@ -112,7 +112,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
       <div>
         <div id="target"></div>
-        <paper-tooltip for="target" animation-delay="0" hidden></paper-tooltip>
+        <kwc-paper-tooltip for="target" animation-delay="0" hidden></kwc-paper-tooltip>
       </div>
     </template>
   </test-fixture>
@@ -121,7 +121,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template>
       <div>
         <div id="target"></div>
-        <paper-tooltip for="target" manual-mode>Text</paper-tooltip>
+        <kwc-paper-tooltip for="target" manual-mode>Text</kwc-paper-tooltip>
       </div>
     </template>
   </test-fixture>
@@ -140,7 +140,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is shown when target is focused', function() {
         var f = fixture('no-text');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
         assert.isTrue(isHidden(actualTooltip));
@@ -152,7 +152,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is not shown if empty', function() {
         var f = fixture('basic');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
         assert.isTrue(isHidden(actualTooltip));
@@ -164,7 +164,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip responds to playAnimation and cancelAnimation', function() {
           var f = fixture('basic');
           var target = f.querySelector('#target');
-          var tooltip = f.querySelector('paper-tooltip');
+          var tooltip = f.querySelector('kwc-paper-tooltip');
 
           var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
           assert.isTrue(isHidden(actualTooltip));
@@ -183,7 +183,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip doesn\'t throw an exception if it has no offsetParent', function() {
         var f = fixture('no-offset-parent');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
         assert.isTrue(isHidden(actualTooltip));
@@ -197,7 +197,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is positioned correctly (bottom)', function() {
         var f = fixture('basic');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
         assert.isTrue(isHidden(actualTooltip));
@@ -227,7 +227,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is positioned correctly (top)', function() {
         var f = fixture('basic');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
         tooltip.position = 'top';
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
@@ -258,7 +258,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is positioned correctly (right)', function() {
         var f = fixture('basic');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
         tooltip.position = 'right';
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
@@ -289,7 +289,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is positioned correctly (left)', function() {
         var f = fixture('basic');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
         tooltip.position = 'left';
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
@@ -320,7 +320,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is fitted correctly if out of bounds', function() {
         var f = fixture('fitted');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
         target.style.top = 0;
         target.style.left = 0;
 
@@ -341,7 +341,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is positioned correctly after being dynamically set', function() {
         var f = fixture('dynamic');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
         assert.isTrue(isHidden(actualTooltip));
@@ -376,7 +376,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip is hidden after target is blurred', function() {
         var f = fixture('basic');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         var actualTooltip = Polymer.dom(tooltip.root).querySelector('#tooltip');
         assert.isTrue(isHidden(actualTooltip));
@@ -394,7 +394,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip unlistens to target on detach', function(done) {
         var f = fixture('basic');
         var target = f.querySelector('#target');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         sinon.spy(tooltip, 'show');
 
@@ -417,7 +417,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('tooltip ignores events in manual-mode', function() {
         var f = fixture('manual-mode');
 
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
         assert.isTrue(tooltip.manualMode);
 
         tooltip.show();
@@ -440,7 +440,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('changing manual-mode toggles event listeners', function() {
         var f = fixture('manual-mode');
 
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
         assert.isTrue(tooltip.manualMode);
 
         sinon.spy(tooltip, '_addListeners');
@@ -459,7 +459,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       test('changing for= re-targets event listeners', function() {
         var f = fixture('dynamic');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         sinon.spy(tooltip, '_addListeners');
         sinon.spy(tooltip, '_removeListeners');
@@ -565,7 +565,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     suite('a11y', function() {
       test('has aria role "tooltip"', function() {
         var f = fixture('basic');
-        var tooltip = f.querySelector('paper-tooltip');
+        var tooltip = f.querySelector('kwc-paper-tooltip');
 
         assert.isTrue(tooltip.getAttribute('role') == 'tooltip');
       });

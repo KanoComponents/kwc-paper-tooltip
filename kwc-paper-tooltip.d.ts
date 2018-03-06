@@ -160,5 +160,5 @@ interface PaperTooltipElement extends Polymer.Element {
 }
 
 interface HTMLElementTagNameMap {
-  "paper-tooltip": PaperTooltipElement;
+  "kwc-paper-tooltip": PaperTooltipElement;
 }

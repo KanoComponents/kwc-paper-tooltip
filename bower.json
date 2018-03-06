@@ -1,7 +1,7 @@
 {
-  "name": "paper-tooltip",
+  "name": "kwc-paper-tooltip",
   "version": "2.0.0",
-  "description": "Material design tooltip popup for content",
+  "description": "An element to display a tooltip, also above the content",
   "authors": [
     "The Polymer Authors"
   ],
@@ -10,7 +10,7 @@
     "polymer",
     "tooltip"
   ],
-  "main": "paper-tooltip.html",
+  "main": "kwc-paper-tooltip.html",
   "private": true,
   "repository": {
     "type": "git",

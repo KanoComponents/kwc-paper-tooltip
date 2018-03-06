@@ -9,7 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../../polymer/polymer.html">
-<link rel="import" href="../paper-tooltip.html">
+<link rel="import" href="../kwc-paper-tooltip.html">
 
 <dom-module id="test-button">
   <template>
@@ -24,7 +24,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: red;
       }
 
-      paper-tooltip {
+      kwc-paper-tooltip {
         width: 70px;
         height: 30px;
       }
@@ -32,7 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <div id="button"></div>
-    <paper-tooltip id="buttonTooltip" for="button">Tooltip text</paper-tooltip>
+    <kwc-paper-tooltip id="buttonTooltip" for="button">Tooltip text</kwc-paper-tooltip>
   </template>
 
   <script>
