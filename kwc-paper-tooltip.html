@@ -53,7 +53,7 @@ Custom property | Description | Default
 @demo demo/index.html
 -->
 
-<dom-module id="paper-tooltip">
+<dom-module id="kwc-paper-tooltip">
   <template>
     <style>
       :host {
@@ -79,6 +79,12 @@ Custom property | Description | Default
         padding: 8px;
         border-radius: 2px;
         @apply --paper-tooltip;
+      }
+
+      #tooltip[above] ::slotted(.triangle){
+          transform: rotate(180deg);
+          top: auto !important;
+          bottom: -8px;
       }
 
       @keyframes keyFrameScaleUp {
@@ -226,14 +232,14 @@ Custom property | Description | Default
       }
     </style>
 
-    <div id="tooltip" class="hidden">
+    <div id="tooltip" class="hidden" above$="{{above}}">
       <slot></slot>
     </div>
   </template>
 
   <script>
     Polymer({
-      is: 'paper-tooltip',
+      is: 'kwc-paper-tooltip',
       hostAttributes: {
         role: 'tooltip',
         tabindex: -1
@@ -314,9 +320,17 @@ Custom property | Description | Default
          * animationConfig settings.  You can enter your own animation
          * by setting it to the css class name.
          */
-        animationExit: {
+         animationExit: {
           type: String,
           value: ""
+        },
+        /**
+         * The flag that indicate if the tooltip
+         * must shown above or not
+         */
+         above: {
+          type: Boolean,
+          value: false
         },
         /**
          * This property is deprecated.  Use --paper-tooltip-animation to change the animation.
@@ -518,9 +532,13 @@ Custom property | Description | Default
           }
           // Clip the top/bottom side.
           if (parentRect.top + tooltipTop + thisRect.height > window.innerHeight) {
-            this.style.bottom = parentRect.height + 'px';
-            this.style.top = 'auto';
+            this.above = true;
+
+            this.style.top = Math.max(-parentRect.top, tooltipTop) - (142 + thisRect.height) + 'px';
+            this.style.bottom = 'auto';
           } else {
+            this.above = false;
+
             this.style.top = Math.max(-parentRect.top, tooltipTop) + 'px';
             this.style.bottom = 'auto';
           }
